@@ -1,21 +1,24 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: 'AI Content Master - SaaS',
-  description: 'Generate high-quality content with AI',
-}
+export const metadata: Metadata = {
+  title: "AI Master SaaS - Create Content with AI",
+  description: "The ultimate AI platform for content creators.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className="dark">
+      <body className={`${inter.className} bg-slate-950 text-white antialiased`}>
+        {children}
+      </body>
     </html>
-  )
+  );
 }
