@@ -1,12 +1,13 @@
 "use client";
 import React, { useState } from 'react';
 import { Sparkles, Zap, Shield, BarChart3, ChevronRight, CheckCircle2, Menu, X } from 'lucide-react';
+import Link from 'next/link';
 
 export default function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-slate-950 text-white">
       {/* Navigation */}
       <nav className="fixed w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -23,9 +24,9 @@ export default function LandingPage() {
             <div className="hidden md:flex items-center gap-8">
               <a href="#features" className="text-gray-400 hover:text-white transition-colors">Features</a>
               <a href="#pricing" className="text-gray-400 hover:text-white transition-colors">Pricing</a>
-              <button className="bg-white text-black px-5 py-2 rounded-full font-medium hover:bg-gray-200 transition-all">
-                Get Started
-              </button>
+              <Link href="/dashboard" className="bg-white text-black px-5 py-2 rounded-full font-medium hover:bg-gray-200 transition-all">
+                Go to Dashboard
+              </Link>
             </div>
 
             <div className="md:hidden">
@@ -40,7 +41,7 @@ export default function LandingPage() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-full mb-8">
             <Zap className="w-4 h-4 text-yellow-400" />
             <span className="text-sm text-gray-300 font-medium">Next Generation AI Platform</span>
           </div>
@@ -55,9 +56,9 @@ export default function LandingPage() {
             The only tool you need to scale your digital presence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all transform hover:scale-105">
+            <Link href="/dashboard" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all transform hover:scale-105">
               Start Building Free <ChevronRight className="w-5 h-5" />
-            </button>
+            </Link>
             <button className="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all">
               View Demo
             </button>
@@ -107,12 +108,12 @@ export default function LandingPage() {
                 </li>
               ))}
             </ul>
-            <a 
-              href="YOUR_GUMROAD_LINK_HERE" 
+            <Link 
+              href="/dashboard" 
               className="block w-full text-center bg-indigo-600 hover:bg-indigo-700 text-white py-4 rounded-xl font-bold transition-all shadow-lg shadow-indigo-500/25"
             >
               Get Started Now
-            </a>
+            </Link>
           </div>
         </div>
       </section>
